@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel='stylesheet' href='style.css'/>
+        <script type='text/javascript' src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+        <script src='countdown.js'></script>
+        <script src='script.js'></script>
+	</head>
+	<body>
+        <!--Add your own HTML!-->  
+        <div class="start">
+          <h1 id="game-name">MONSTER EXPLODE</h1>
+          <h2 class="start-button">START</h2>
+        </div>
+        
+        <div class="congratulations">
+          <h1 id="message">CONGRATULATIONS!!</h1>
+          <h2 class="start-button">RESTART</h2>
+        </div>
+		
+		<div class="time-out">
+			<h1 id="message">OH NO! OUT OF TIME.</h1>
+			<h2 class="start-button">RESTART</h2>
+		</div>
+		
+        <audio id="monster-sound" src="sound-effect.mp3"></audio>
+			
+        <div class="level1">
+          <div class="monster large position-1"></div>
+          <div class="monster large position-2"></div>
+          <div class="monster medium position-3"></div>
+          <div class="monster medium position-4"></div>
+        </div>
+        
+        <div class="score">
+            <div class="score-text">Score</div>
+            <div id="score-value">0</div>  
+        </div>
+		<div class="countdown">
+			<div class="score-text">Time</div>
+	        <div id="timer"></div>
+		</div>        
+	</body>
+</html>
