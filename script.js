@@ -69,15 +69,6 @@ var startLevel = function() {
   $currentLevel.find('.monster').each(function() {
     path($(this));
   });
-  $currentLevel.find('.monster').click(function() {
-	//stop current monster animation
-    $(this).stop(true);  
-    $(this).effect('explode',levelCompleteCheck);
-	//Play audio on monster click
-    $('#monster-sound')[0].play();
-    score = score + 20;
-    updateScore();    
-  });
   countdown.start();
 }
 
@@ -115,8 +106,12 @@ var levelCompleteCheck = function() {
   }).length === 0) {
     countdown.stop()
     endLevel();
-    $currentLevel = $('.level2');
-    startLevel();
+    if ($currentLevel.is($('.level1'))) {
+      $currentLevel = $('.level2');
+      startLevel();
+    } else {
+      congratulationScreen();
+    } 
   }
 }
 
@@ -124,4 +119,13 @@ var levelCompleteCheck = function() {
 $(document).ready(function() {
   startScreen();
   setupStartButtons();
+  $('.monster').click(function() {
+	//stop current monster animation
+    $(this).stop(true);  
+    $(this).effect('explode',levelCompleteCheck);
+	//Play audio on monster click
+    $('#monster-sound')[0].play();
+    score = score + 20;
+    updateScore();    
+  });
 });
