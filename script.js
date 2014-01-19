@@ -58,27 +58,44 @@ var path = function($monster) {
 //Different game screens
 var startScreen = function() {
   $('.start').show();
-  $('.monster').hide();
-  $('.congratulations').hide();
-  $('.time-out').hide();
+  $('.level').hide();
+  $('.time-out, .congratulations').hide();
 }
-var playingScreen = function() {
-  $('.start').hide();
-  $('.monster').show();
-  $('.congratulations').hide();
-  $('.time-out').hide();
+
+var startLevel = function() {
+  $('.start, .time-out, .congratulations').hide();
+  $currentLevel.show();
+  $currentLevel.find('.monster').show();
+  $currentLevel.find('.monster').each(function() {
+    path($(this));
+  });
+  $currentLevel.find('.monster').click(function() {
+	//stop current monster animation
+    $(this).stop(true);  
+    $(this).effect('explode',levelCompleteCheck);
+	//Play audio on monster click
+    $('#monster-sound')[0].play();
+    score = score + 20;
+    updateScore();    
+  });
+  countdown.start();
 }
+
+var endLevel = function() {
+  $currentLevel.hide();
+  $('.monster').stop(true);
+}
+
 var congratulationScreen = function() {
   $('.congratulations').show();
   $('.start').hide();
   $('.time-out').hide();
 }
+
 var timeoutScreen = function() {
-  $('.start').hide();
-  $('.monster').hide();
-  $('.monster').stop(true);
-  $('.congratulations').hide();
+  $('.start, .congratulations').hide();
   $('.time-out').show();
+  endLevel();
 }
 
 //Make the start button work
@@ -86,39 +103,25 @@ var setupStartButtons = function() {
   $('.start-button').click(function() {
     score = 0;
     updateScore();
-    countdown.start();
-    playingScreen();
-    $('.monster').each(function() {
-      path($(this));
-    });
+    $currentLevel = $('.level1');
+    startLevel();
   });
 }
 
 //check to see if all current level monsters are now display none and then stop countdown, show level2 and start countdown again
-var levelComplete = function() {
-  if (($currentLevel.find('.monster')).filter(function() {
+var levelCompleteCheck = function() {
+  if ($currentLevel.find('.monster').filter(function() {
     return $(this).css('display') !== 'none';
   }).length === 0) {
     countdown.stop()
-    $currentLevel.hide();
-    $('.level2').show();
-    countdown.start();
+    endLevel();
+    $currentLevel = $('.level2');
+    startLevel();
   }
 }
 
 
 $(document).ready(function() {
-  $currentLevel = $('.level1');
-  $('.level2').hide();
   startScreen();
   setupStartButtons();
-  $('.monster').click(function() {
-	//stop all animations
-    $(this).stop(true);  
-    $(this).effect('explode',levelComplete);
-	//Play audio on monster click
-    $('#monster-sound')[0].play();
-    score = score + 20;
-    updateScore();    
-  });
 });
