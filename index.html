@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-        <link rel='stylesheet' href='style.css'/>
-        <script type='text/javascript' src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-        <script src='countdown.js'></script>
-        <script src='script.js'></script>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='style.css'/>
+    <script type='text/javascript' src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src='countdown.js'></script>
+    <script src='script.js'></script>
 	</head>
 	<body>
-        <!--Add your own HTML!-->  
-        <div class="start">
-          <h1 id="game-name">MONSTER EXPLODE</h1>
-          <h2 class="start-button">START</h2>
-        </div>
-        
-        <div class="congratulations">
-          <h1 id="message">CONGRATULATIONS!!</h1>
-          <h2 class="start-button">RESTART</h2>
-        </div>
-		
-		<div class="time-out">
+    
+    <div class="infobox start">
+      <h1 id="game-name">MONSTER EXPLODE</h1>
+      <h2 class="start-button">START</h2>
+    </div>
+    
+    <div class="infobox congratulations">
+      <h1 id="message">CONGRATULATIONS!!</h1>
+      <h2 class="start-button">RESTART</h2>
+    </div>
+		    
+		<div class="infobox time-out">
 			<h1 id="message">OH NO! OUT OF TIME!</h1>
 			<h2 class="start-button">RESTART</h2>
 		</div>
 		
-        <audio id="monster-sound" src="sound-effect.mp3"></audio>
+    <audio id="monster-sound" src="sound-effect.mp3"></audio>
 			
-        <div class="level level1">
-          <h1>Level 1</h1>
-          <div class="monster large position-1"></div>
-          <div class="monster large position-2"></div>
-          <div class="monster medium position-3"></div>
-          <div class="monster medium position-4"></div>
-        </div>
+    <div class="level level1">
+      <h1>Level 1</h1>
+      <div class="monster large position-1"></div>
+      <div class="monster large position-2"></div>
+      <div class="monster medium position-3"></div>
+      <div class="monster medium position-4"></div>
+    </div>
 		
-        <div class="level level2">
-          <h1>Level 2</h1>
-          <div class="monster medium position-1"></div>
-          <div class="monster medium position-2"></div>
-          <div class="monster medium position-3"></div>
-          <div class="monster medium position-4"></div>
-        </div>
+    <div class="level level2">
+      <h1>Level 2</h1>
+      <div class="monster medium position-1"></div>
+      <div class="monster medium position-2"></div>
+      <div class="monster medium position-3"></div>
+      <div class="monster medium position-4"></div>
+    </div>
         
-        <div class="score">
-            <div class="score-text">Score</div>
-            <div id="score-value">0</div>  
-        </div>
-		<div class="countdown">
-			<div class="score-text">Time</div>
-	        <div id="timer"></div>
+    <div class="statbox score">
+      <h2>Score</h2>
+      <div class="stat" id="score-value">0</div>  
+    </div>
+		
+    <div class="statbox countdown">
+			<h2>Time</h2>
+	    <div class="stat" id="timer"></div>
 		</div>        
-	</body>
+	
+  </body>
 </html>

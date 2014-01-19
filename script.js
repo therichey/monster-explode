@@ -1,4 +1,3 @@
-// Add your JavaScript below!
 var score = 0;
 
 var $currentLevel;
@@ -21,6 +20,7 @@ var oneOf = function(x, y) {
   }
 };
 
+//Create random path animation for the monsters
 var path = function($monster) {
   var topOrLeft = oneOf('top','left');
   var plusOrMinus = oneOf('+','-');
@@ -99,7 +99,7 @@ var setupStartButtons = function() {
   });
 }
 
-//check to see if all current level monsters are now display none and then stop countdown, show level2 and start countdown again
+//check to see if all current level monsters are now display none and then stop countdown, show next level and start countdown again or show congratulations screen
 var levelCompleteCheck = function() {
   if ($currentLevel.find('.monster').filter(function() {
     return $(this).css('display') !== 'none';

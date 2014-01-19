@@ -5,7 +5,7 @@ body {
   background-color: black;
 }
 
-.start {
+.infobox {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -17,34 +17,18 @@ body {
   border: 2px solid gray;
 }
 
+.infobox.congratulations {
+  color: purple;
+}
+
+.infobox.time-out {
+  color: red;
+}
+
 .start-button {
   background-color: #222;
-  color:yellow;
+  color: yellow;
   cursor: pointer;
-}
-
-.congratulations {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  margin-left: -200px;
-  width: 400px;
-  color: purple;
-  font-family: Monaco;
-  text-align: center;
-  border: 2px solid gray;
-}
-
-.time-out {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  margin-left: -200px;
-  width: 400px;
-  color: purple;
-  font-family: Monaco;
-  text-align: center;
-  border: 2px solid gray;
 }
 
 .level h1 {
@@ -89,10 +73,8 @@ body {
   left: 55%;
 }
 
-.score {
+.statbox {
   position: absolute;
-  bottom: 1%;
-  right: 1%;
   width: 100px;
   padding: 10px;
   background-color: black;
@@ -100,33 +82,27 @@ body {
   text-align: center;
 }
 
-.score-text {
+.statbox.score {
+  bottom: 1%;
+  right: 1%;
+}
+
+.statbox.countdown {
+  bottom: 1%;
+  left: 1%;
+}
+
+.statbox h2 {
+  margin: 0;
+  font-weight: normal;
   color: white;
   font-size: 36px;
   font-family: Helvetica;
 }
 
-#score-value {
+.statbox .stat {
   position: relative;
   color: yellow;
   font-size: 40px;
   font-family: Monaco;
 }
-
-.countdown {
-  position: absolute;
-  bottom: 1%;
-  left: 1%;
-  width: 100px;
-  padding: 10px;
-  background-color: black;
-  border: 2px solid yellow;
-  text-align: center;
-}
-
-#timer {
-  position: relative;
-  color: yellow;
-  font-size: 40px;
-  font-family: Monaco;
-} 
