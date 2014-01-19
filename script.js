@@ -1,5 +1,8 @@
 // Add your JavaScript below!
 var score = 0;
+
+var $currentLevel;
+
 var updateScore = function() {
   $('#score-value').text(score);    
 };
@@ -90,21 +93,32 @@ var setupStartButtons = function() {
     });
   });
 }
-  
+
+//check to see if all current level monsters are now display none and then stop countdown, show level2 and start countdown again
+var levelComplete = function() {
+  if (($currentLevel.find('.monster')).filter(function() {
+    return $(this).css('display') !== 'none';
+  }).length === 0) {
+    countdown.stop()
+    $currentLevel.hide();
+    $('.level2').show();
+    countdown.start();
+  }
+}
+
+
 $(document).ready(function() {
+  $currentLevel = $('.level1');
+  $('.level2').hide();
   startScreen();
   setupStartButtons();
   $('.monster').click(function() {
 	//stop all animations
     $(this).stop(true);  
-    $(this).effect('explode');
+    $(this).effect('explode',levelComplete);
 	//Play audio on monster click
     $('#monster-sound')[0].play();
     score = score + 20;
-    updateScore();
-    if (score === 80) {
-      countdown.stop()
-      congratulationScreen();
-    }
+    updateScore();    
   });
 });
