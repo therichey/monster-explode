@@ -47,6 +47,12 @@ body {
   border: 2px solid gray;
 }
 
+.level h1 {
+  color: white;
+  font-family: Monaco; 
+  font-size: 28px;
+}
+
 .monster {
   position: absolute;
   background-color: red;
