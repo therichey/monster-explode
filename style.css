@@ -37,42 +37,6 @@ body {
   font-size: 28px;
 }
 
-.monster {
-  position: absolute;
-  background-color: red;
-  cursor: pointer;
-}
-
-.monster.large {
-  width: 55px;
-  height: 55px;
-}
-
-.monster.medium {
-  width: 45px;
-  height: 45px;
-}
-
-.monster.position-1 {
-  top: 20%;
-  left: 20%;
-}
-
-.monster.position-2 {
-  top: 20%;
-  left: 50%;
-}
-
-.monster.position-3 {
-  top: 40%;
-  left: 10%;
-}
-
-.monster.position-4 {
-  top: 30%;
-  left: 55%;
-}
-
 .statbox {
   position: absolute;
   width: 100px;
