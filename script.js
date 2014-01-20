@@ -36,14 +36,14 @@ var path = function($monster) {
     if (offset.left - distance < 0) {
       plusOrMinus = '+';
     }
-  //Check if the monsters are going down and prevent it  
+  //Check if the monsters are going down and prevent it 
   } else if (topOrLeft === 'top' && plusOrMinus === '+') {
-    if (offset.top + distance > $(window).height() ) {
+    if (offset.top + distance + $monster.height() > $(window).height() ) {
       plusOrMinus = '-';
     }
   //Check if the monster are going right and prevent it
   } else if (topOrLeft === 'left' && plusOrMinus === '+') {
-    if (offset.left + distance > $(window).width() ) {
+    if (offset.left + distance + $monster.width() > $(window).width() ) {
       plusOrMinus = '-';
     }
   };
@@ -58,7 +58,7 @@ var path = function($monster) {
   });
 };
 
-// ($('.level').data('speed1')), ($('.level').data('speed2'))
+
 //Different game screens
 var startScreen = function() {
   $('.start').show();
