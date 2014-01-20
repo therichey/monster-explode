@@ -1,5 +1,9 @@
 .monster {
   position: absolute;
+  background-image: url(eyes.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: red;
   cursor: pointer;
 }
