@@ -4,7 +4,6 @@
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: red;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -12,18 +11,40 @@
 .monster.large {
   width: 55px;
   height: 55px;
+  background-color: red;
+  
+  -webkit-animation-name: redMonsterPulse;
+  -moz-animation-name: redMonsterPulse;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
 }
 
 .monster.medium {
   width: 45px;
   height: 45px;
   background-color: green;
+
+  -webkit-animation-name: greenMonsterPulse;
+  -moz-animation-name: greenMonsterPulse;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
 }
 
 .monster.small {
   width: 35px;
   height: 35px;
   background-color: yellow;
+  
+  -webkit-animation-name: yellowMonsterPulse;
+  -moz-animation-name: yellowMonsterPulse;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
 }
 
 .monster.position-1 {
@@ -44,4 +65,67 @@
 .monster.position-4 {
   top: 30%;
   left: 55%;
+}
+
+@-webkit-keyframes redMonsterPulse {
+  from {
+    background-color: red;
+    border-color: red;
+    border-width: 2px;
+    box-shadow: 0 0 40px red;
+  }
+  50% { 
+    background-color: #FA4407; 
+    border-color: #FA4407;
+    border-width: 2px;
+    box-shadow: 0 0 50px #FA4407; 
+  }
+  to { 
+    background-color: red; 
+    border-color: red;
+    border-width: 2px;
+    box-shadow: 0 0 40px red; 
+  }
+}
+
+@-webkit-keyframes greenMonsterPulse {
+  from {
+    background-color: green;
+    border-color: green;
+    border-width: 2px;
+    box-shadow: 0 0 40px green;
+  }
+  50% { 
+    background-color: #0AF525; 
+    border-color: #0AF525;
+    border-width: 2px;
+    box-shadow: 0 0 50px #0AF525; 
+  }
+  to { 
+    background-color: green; 
+    border-color: green;
+    border-width: 2px;
+    box-shadow: 0 0 40px green; 
+  }
+}
+
+@-webkit-keyframes yellowMonsterPulse {
+  from {
+    background-color: yellow;
+    border-color: yellow;
+    border-width: 2px;
+    box-shadow: 0 0 40px yellow;
+  }
+  50% { 
+    background-color: #FFBF00; 
+    border-color: #FFBF00;
+    border-width: 2px;
+    box-shadow: 0 0 50px #FFBF00; 
+  }
+  to { 
+    background-color: yellow; 
+    border-color: yellow;
+    border-width: 2px;
+    box-shadow: 0 0 40px yellow; 
+  }
 }

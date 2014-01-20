@@ -47,9 +47,10 @@ var path = function($monster) {
       plusOrMinus = '-';
     }
   };
-  //Make the monsters move
+  //set the range of speeds to use the data attributes
   var range1 = $currentLevel.data('speed1');
   var range2 = $currentLevel.data('speed2');
+  //Make the monsters move
   var animationProperties = {};
   animationProperties[topOrLeft] = plusOrMinus + '=' + distance +'px'; 
   $monster.animate(animationProperties, range(range1,range2), function() {
