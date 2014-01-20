@@ -109,6 +109,9 @@ var levelCompleteCheck = function() {
     if ($currentLevel.is($('.level1'))) {
       $currentLevel = $('.level2');
       startLevel();
+    } else if ($currentLevel.is($('.level2'))) {
+      $currentLevel = $('.level3');
+      startLevel();
     } else {
       congratulationScreen();
     } 

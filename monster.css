@@ -20,6 +20,12 @@
   background-color: green;
 }
 
+.monster.small {
+  width: 35px;
+  height: 35px;
+  background-color: yellow;
+}
+
 .monster.position-1 {
   top: 20%;
   left: 20%;
