@@ -127,6 +127,7 @@ var levelCompleteCheck = function() {
 
 
 $(document).ready(function() {
+  $('.raptorButton').raptorize();
   startScreen();
   setupStartButtons();
   $('.monster').click(function() {
