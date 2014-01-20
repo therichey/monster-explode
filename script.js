@@ -48,13 +48,16 @@ var path = function($monster) {
     }
   };
   //Make the monsters move
+  var range1 = $currentLevel.data('speed1');
+  var range2 = $currentLevel.data('speed2');
   var animationProperties = {};
   animationProperties[topOrLeft] = plusOrMinus + '=' + distance +'px'; 
-  $monster.animate(animationProperties, range(1000, 3000), function() {
+  $monster.animate(animationProperties, range(range1,range2), function() {
     path($monster);
   });
 };
 
+// ($('.level').data('speed1')), ($('.level').data('speed2'))
 //Different game screens
 var startScreen = function() {
   $('.start').show();
@@ -132,3 +135,6 @@ $(document).ready(function() {
     updateScore();    
   });
 });
+
+
+
