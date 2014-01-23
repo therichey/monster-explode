@@ -124,7 +124,7 @@ $(document).ready(function() {
   $('.raptorButton').raptorize();
   startScreen();
   setupStartButtons();
-  $('.monster').click(function(e) {
+  $('.monster').mousedown(function(e) {
     e.preventDefault();
 	//stop current monster animation
     $(this).stop(true);  
