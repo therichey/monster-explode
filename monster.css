@@ -67,6 +67,16 @@
   left: 55%;
 }
 
+.monster.postition-5 {
+  top: 75%;
+  left: 75%;
+}
+
+.monster.position-6 {
+  top: 50%;
+  left: 60%;
+}
+
 @-webkit-keyframes redMonsterPulse {
   from {
     background-color: red;
